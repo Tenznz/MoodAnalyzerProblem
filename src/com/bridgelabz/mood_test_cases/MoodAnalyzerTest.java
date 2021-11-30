@@ -1,6 +1,7 @@
 package com.bridgelabz.mood_test_cases;
 
 import static org.junit.Assert.assertEquals;
+
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -8,23 +9,27 @@ import com.bridgelabz.mood_analyzer.MoodAnalyzer;
 
 public class MoodAnalyzerTest {
 	public static MoodAnalyzer mood;
+	private static String message;
+
+	public MoodAnalyzerTest() {
+		message = "I am in Happy Mood";
+	}
 
 	@BeforeClass
 	public static void init() {
-		mood = MoodAnalyzer.getInstance();
+		new MoodAnalyzerTest();
+		mood = MoodAnalyzer.getInstance(message);
 	}
 
 	@Test
-	public void given_message_should_return_SAD() {
-		String message = "I am in Sad Mood";
-		String actualMessage = mood.analyseMood(message);
+	public void given_message_in_constructor_should_return_SAD() {
+		String actualMessage = mood.analyseMood();
 		assertEquals("SAD", actualMessage);
 	}
 
 	@Test
-	public void given_message_should_return_HAPPY() {
-		String message = "I am in Any Mood";
-		String actualMessage = mood.analyseMood(message);
+	public void given_message_in_constructor_should_return_HAPPY() {
+		String actualMessage = mood.analyseMood();
 		assertEquals("HAPPY", actualMessage);
 	}
 
