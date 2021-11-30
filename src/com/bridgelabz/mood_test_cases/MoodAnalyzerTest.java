@@ -12,12 +12,11 @@ public class MoodAnalyzerTest {
 	private static String message;
 
 	public MoodAnalyzerTest() {
-		message = "I am in sad Mood";
+		message = "I am in Happy Mood";
 	}
 
 	@BeforeClass
 	public static void init() {
-
 		new MoodAnalyzerTest();
 		mood = MoodAnalyzer.getInstance(message);
 	}
@@ -26,6 +25,12 @@ public class MoodAnalyzerTest {
 	public void given_message_in_constructor_should_return_SAD() {
 		String actualMessage = mood.analyseMood();
 		assertEquals("SAD", actualMessage);
+	}
+
+	@Test
+	public void given_message_in_constructor_should_return_HAPPY() {
+		String actualMessage = mood.analyseMood();
+		assertEquals("HAPPY", actualMessage);
 	}
 
 	@AfterClass
