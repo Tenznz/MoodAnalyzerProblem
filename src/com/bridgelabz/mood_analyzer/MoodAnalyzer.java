@@ -19,11 +19,11 @@ public class MoodAnalyzer {
 		try {
 			if (message.toLowerCase().contains("sad"))
 				message = "SAD";
-			else
-				message = "HAPPY";
+//			else
+//				message = "HAPPY";
 			return message;
 		} catch (Exception e) {
-			return "string is empty";
+			return "HAPPY";
 		}
 
 	}
