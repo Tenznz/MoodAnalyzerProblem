@@ -5,12 +5,13 @@ public class MoodAnalyzer {
 	private String message;
 
 	private MoodAnalyzer(String message) {
-		this.message=message;
+
+		this.message = message;
 	}
 
-	public static MoodAnalyzer getInstance(String message) {
+	public static MoodAnalyzer getInstance(String userMessage) {
 		if (instance == null) {
-			instance = new MoodAnalyzer(message);
+			instance = new MoodAnalyzer(userMessage);
 		}
 		return instance;
 	}
@@ -22,5 +23,4 @@ public class MoodAnalyzer {
 			message = "HAPPY";
 		return message;
 	}
-
 }
