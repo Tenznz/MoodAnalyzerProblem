@@ -4,12 +4,13 @@ import java.util.Scanner;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws MoodAnalysisException {
 
 //		System.out.println("How was your mood?");
 //		Scanner sc = new Scanner(System.in);
 //		String message = sc.nextLine();
-		MoodAnalyzer mood = MoodAnalyzer.getInstance(null);
+		
+		MoodAnalyzer mood = MoodAnalyzer.getInstance(" ");
 		System.out.println(mood.analyseMood());
-	}
+		}
 }
