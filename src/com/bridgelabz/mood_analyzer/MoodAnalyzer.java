@@ -20,7 +20,7 @@ public class MoodAnalyzer {
 	public String analyseMood() throws MoodAnalysisException {
 		try {
 			if (message == null) {
-				throw new MoodAnalysisException(Mood.NULL_MOOD, "given value is ");
+				throw new MoodAnalysisException(Mood.NULL_MOOD, "given value is null ");
 			}
 			if(message== " ") {
 				throw new MoodAnalysisException(Mood.EMPTY_MOOD, "given value is Empty");
