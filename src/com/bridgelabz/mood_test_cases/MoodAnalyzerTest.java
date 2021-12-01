@@ -15,7 +15,7 @@ public class MoodAnalyzerTest {
 	private static String message;
 
 	public MoodAnalyzerTest() {
-		message = null;
+		message = " ";
 	}
 
 	@BeforeClass
